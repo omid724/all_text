@@ -51,7 +51,7 @@ def split_protocol_part_of_url(url):
 def read_domains():
     with open('domains.txt', "r") as f:
         d = f.readlines()
-    return d
+    return [remove_last_forward_slash(url.strip()) for url in d]
 
 def write_domains(urls):
     with open('domains.txt', "w") as f:
